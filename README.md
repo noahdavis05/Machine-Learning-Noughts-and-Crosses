@@ -4,6 +4,7 @@ This is a Python implementation of Noughts and Crosses (Tic-Tac-Toe), inspired b
 ## Table of Contents
 - [Overview](#overview)
 - [Files and Structure](#files-and-structure)
+- [Usage](#usage)
 
 ## Overview
 This project was inspired by a video on the MENACE engine I watched on youtube https://www.youtube.com/watch?v=R9c-_neaxeU.
@@ -22,4 +23,18 @@ I’ve also included a pre-trained dataset in the repository, so the bot already
 - training.db is the database with the weightings for each move.
 
 ## Usage
-To use this code yourself, you could download the current database, or train it yourself by running the setUpDB.py file, followed by the main.py file. To play the game you will need to have pygame installed, and run game.py.
+To use this code yourself: Clone this repo. install pygame 
+```
+pip install pygame
+```
+Optional - Initialize the database and train the bots.
+```
+python setUpDB.py
+python main.py
+```
+Play against the bot.
+```
+python game.py
+```
+This will launch the graphical interface where you can play against the bot.
+
