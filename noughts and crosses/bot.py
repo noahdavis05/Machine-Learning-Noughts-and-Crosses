@@ -2,6 +2,9 @@ from noughtsAndCrosses import Grid
 import sqlite3
 import random
 
+"""
+This is a class for the bots which the user can play against and that are used for training.
+"""
 class Bot:
     def __init__(self, character):
         self.char = character
@@ -12,6 +15,7 @@ class Bot:
     def readBoard(self, board):
         self.board = board.getGridString()
 
+    # function checks if the board is already in the database, if not it gets added in.
     def checkBoard(self,b):
         self.board = b.getGridString()
         # check database to see if this board has previously been there
@@ -35,8 +39,8 @@ class Bot:
             self.conn.commit()
             print("New board added to database")
 
-        # bot should make a move
 
+    # function to choose what move the bot will make depending on the weightings given from the database.
     def makeMove(self):
         # board must be in db already as should either be there or just added in 
         statement = "SELECT * FROM game_data WHERE board = '" + self.board + "'"
@@ -76,10 +80,12 @@ class Bot:
         col = move % 3'''
         return row, col
     
+    # function to keep a log of what moves the bot made in a round
     def logMove(self, move):
         temp = [ self.board, move ]
         self.log.append(temp)
 
+    # function to be called at the end of a round. If the bot won, lost, or drew, the weightings of the selected moved in the database need to be updated accordingly.
     def endRound(self, Movebonus):
         #check who won
         print(self.log , self.char)

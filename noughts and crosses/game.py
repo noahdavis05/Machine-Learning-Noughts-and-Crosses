@@ -2,9 +2,13 @@ from noughtsAndCrosses import Grid
 from bot import Bot
 import pygame
 
-# functions  
+"""
+The class where the game is played.
+Where the player plays against the bot, taking it in turns with who goes first.
+"""
 class Game:
 
+    # pygame window is initiated and the grid drawn on screen.
     def __init__(self):
         pygame.init()
         self.width = 600
@@ -124,6 +128,8 @@ class Game:
         print("Bot wins", self.botWins)
         print("Draws", self.draws)
 
+
+# game initiated and played.
 game = Game()
 
 game.playRounds()

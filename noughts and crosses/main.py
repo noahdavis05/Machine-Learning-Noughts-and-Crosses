@@ -1,6 +1,10 @@
 from noughtsAndCrosses import Grid
 from bot import Bot
 
+"""
+This is the file where the training of the bots happens.
+Two bots are put up against eachother to train what moves to play whether the bot playes first or second (as noughts or crosses).
+"""
 
 for i in range(0,1000000):
     print(i)
@@ -8,7 +12,6 @@ for i in range(0,1000000):
     myGrid = Grid()
     myBot1 = Bot("X")
     myBot2 = Bot("O")
-
 
     gameOver = False
     moveCount = 0
@@ -25,9 +28,6 @@ for i in range(0,1000000):
             myGrid.setGrid(row, col, "O")
 
         moveCount += 1
-
-
-
 
         if not myGrid.checkWin():
             if moveCount == 9:

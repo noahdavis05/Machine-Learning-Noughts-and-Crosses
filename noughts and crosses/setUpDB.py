@@ -1,5 +1,9 @@
 import sqlite3
 
+"""
+This is the code to setup the database.
+"""
+
 conn = sqlite3.connect('training.db')
 c = conn.cursor()
 
